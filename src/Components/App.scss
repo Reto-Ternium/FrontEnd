@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.imageContainer {
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.Logo {
+  width: 14rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  box-shadow: 1px 1px 10px rgba($color: black, $alpha: 0.5);
+}
+
+.slideIcon {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+
+  padding: 0.3rem;
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 1px 1px 10px rgba($color: black, $alpha: 0.5);
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(2px);
+    transition: all 0.2s;
+  }
+}
