@@ -8,6 +8,9 @@
 *::before {
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 html {
   box-sizing: inherit;
