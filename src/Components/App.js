@@ -5,8 +5,16 @@ import Mapa from "../assets/Mapa.png";
 import Logo from "../assets/logo.png";
 import { ReactComponent as LeftArrow } from "../assets/LeftArrow.svg";
 import { ReactComponent as RightArrow } from "../assets/RightArrow.svg";
+import Unity, { UnityContext } from "react-unity-webgl";
 
 import "./App.scss";
+
+const unityContext = new UnityContext({
+  loaderUrl: "Build/public.loader.js",
+  dataUrl: "Build/public.data",
+  frameworkUrl: "Build/public.framework.js",
+  codeUrl: "Build/public.wasm",
+});
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState(false);
@@ -18,7 +26,10 @@ export default function TemporaryDrawer() {
     <div className="imageContainer">
       <img className="Logo" src={Logo} alt={"Logo Ternium"} />
       <LeftArrow className="slideIcon" onClick={toggleDrawer(true)} />
-      <img className="Image" src={Mapa} alt={"Mapa"} />
+      <div className="Image">
+        <Unity unityContext={unityContext} />;
+      </div>
+      {/* <img className="Image" src={Mapa} alt={"Mapa"} /> */}
       <Drawer anchor={"right"} open={state} onClose={toggleDrawer(false)}>
         <RightArrow
           className="slideIcon slideIcon__left"
