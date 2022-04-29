@@ -292,56 +292,56 @@ function normalizedInfo(data, zonaInfo) {
   ];
 
   let coordX = [
-    { upper: -293713230, lower: -293995673 },
-    { upper: -293995673, lower: -294278116 },
-    { upper: -294278116, lower: -294560559 },
-    { upper: -294560559, lower: -294843002 },
-    { upper: -294843002, lower: -295125445 },
-    { upper: -295125445, lower: -295407888 },
-    { upper: -295407888, lower: -295690331 },
-    { upper: -295690331, lower: -295972774 },
-    { upper: -295972774, lower: -296255217 },
-    { upper: -296255217, lower: -296537660 },
-    { upper: -296537660, lower: -296820103 },
-    { upper: -296820103, lower: -297102546 },
-    { upper: -297102546, lower: -297384989 },
-    { upper: -297384989, lower: -297667432 },
-    { upper: -297667432, lower: -297949875 },
-    { upper: -297949875, lower: -298232318 },
-    { upper: -298232318, lower: -298514761 },
-    { upper: -298514761, lower: -298797204 },
-    { upper: -298797204, lower: -299079647 },
-    { upper: -299079647, lower: -299362089 },
-    { upper: -299362089, lower: -299644532 },
-    { upper: -299644532, lower: -299926975 },
-    { upper: -299926975, lower: -300209418 },
-    { upper: -300209418, lower: -300491861 },
-    { upper: -300491861, lower: -300774304 },
-    { upper: -300774304, lower: -301056747 },
-    { upper: -301056747, lower: -301339190 },
-    { upper: -301339190, lower: -301621633 },
-    { upper: -301621633, lower: -301904076 },
-    { upper: -301904076, lower: -302186519 },
-    { upper: -302186519, lower: -302468962 },
-    { upper: -302468962, lower: -302751405 },
-    { upper: -302751405, lower: -303033848 },
-    { upper: -303033848, lower: -303316291 },
-    { upper: -303316291, lower: -303598734 },
-    { upper: -303598734, lower: -303881177 },
-    { upper: -303881177, lower: -304163620 },
-    { upper: -304163620, lower: -304446063 },
-    { upper: -304446063, lower: -304728506 },
-    { upper: -304728506, lower: -305010949 },
-    { upper: -305010949, lower: -305293392 },
-    { upper: -305293392, lower: -305575835 },
-    { upper: -305575835, lower: -305858278 },
-    { upper: -305858278, lower: -306140721 },
-    { upper: -306140721, lower: -306423164 },
-    { upper: -306423164, lower: -306705607 },
-    { upper: -306705607, lower: -306988050 },
-    { upper: -306988050, lower: -307270493 },
-    { upper: -307270493, lower: -307552936 },
     { upper: -307552936, lower: -307835379 },
+    { upper: -307270493, lower: -307552936 },
+    { upper: -306988050, lower: -307270493 },
+    { upper: -306705607, lower: -306988050 },
+    { upper: -306423164, lower: -306705607 },
+    { upper: -306140721, lower: -306423164 },
+    { upper: -305858278, lower: -306140721 },
+    { upper: -305575835, lower: -305858278 },
+    { upper: -305293392, lower: -305575835 },
+    { upper: -305010949, lower: -305293392 },
+    { upper: -304728506, lower: -305010949 },
+    { upper: -304446063, lower: -304728506 },
+    { upper: -304163620, lower: -304446063 },
+    { upper: -303881177, lower: -304163620 },
+    { upper: -303598734, lower: -303881177 },
+    { upper: -303316291, lower: -303598734 },
+    { upper: -303033848, lower: -303316291 }, // Cuarto spot
+    { upper: -302751405, lower: -303033848 }, // Tercer spot
+    { upper: -302468962, lower: -302751405 }, // Segunda spot
+    { upper: -302186519, lower: -302468962 }, // Aquí empezamos primera spot
+    { upper: -301904076, lower: -302186519 }, // Segunda spot
+    { upper: -301621633, lower: -301904076 }, // Tercera spot
+    { upper: -301339190, lower: -301621633 }, // Cuarto spot
+    { upper: -301056747, lower: -301339190 }, // Quinto spot
+    { upper: -300774304, lower: -301056747 },
+    { upper: -300491861, lower: -300774304 },
+    { upper: -300209418, lower: -300491861 },
+    { upper: -299926975, lower: -300209418 },
+    { upper: -299644532, lower: -299926975 },
+    { upper: -299362089, lower: -299644532 },
+    { upper: -299079647, lower: -299362089 },
+    { upper: -298797204, lower: -299079647 },
+    { upper: -298514761, lower: -298797204 },
+    { upper: -298232318, lower: -298514761 },
+    { upper: -297949875, lower: -298232318 },
+    { upper: -297667432, lower: -297949875 },
+    { upper: -297384989, lower: -297667432 },
+    { upper: -297102546, lower: -297384989 },
+    { upper: -296820103, lower: -297102546 },
+    { upper: -296537660, lower: -296820103 },
+    { upper: -296255217, lower: -296537660 },
+    { upper: -295972774, lower: -296255217 },
+    { upper: -295690331, lower: -295972774 },
+    { upper: -295407888, lower: -295690331 },
+    { upper: -295125445, lower: -295407888 },
+    { upper: -294843002, lower: -295125445 },
+    { upper: -294560559, lower: -294843002 },
+    { upper: -294278116, lower: -294560559 },
+    { upper: -293995673, lower: -294278116 },
+    { upper: -293713230, lower: -293995673 },
   ];
 
   let posX = 0;
@@ -356,7 +356,7 @@ function normalizedInfo(data, zonaInfo) {
         item.Longitud <= coordX[iter].upper &&
         item.Longitud > coordX[iter].lower
       ) {
-        posX = iter;
+        posY = iter;
       }
     }
 
@@ -365,11 +365,17 @@ function normalizedInfo(data, zonaInfo) {
         item.Latitud >= coordY[iter].upper &&
         item.Latitud < coordY[iter].lower
       ) {
-        posY = iter;
+        posX = iter;
       }
     }
 
-    zone = posY * 50 + posX;
+    zone = (49 - posX) * 50 + posY;
+    console.log(item);
+    console.log(zone);
+
+    console.log(`PosX = ${49 - posX}`);
+    console.log(`PosY = ${posY}`);
+
     if (zone == zonaInfo) {
       newData.push(item);
     }
