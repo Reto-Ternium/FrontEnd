@@ -60,11 +60,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/public.loader.js";
+      var loaderUrl = buildUrl + "/Downloads.loader.js";
       var config = {
-        dataUrl: buildUrl + "/public.data.unityweb",
-        frameworkUrl: buildUrl + "/public.framework.js.unityweb",
-        codeUrl: buildUrl + "/public.wasm.unityweb",
+        dataUrl: buildUrl + "/Downloads.data.unityweb",
+        frameworkUrl: buildUrl + "/Downloads.framework.js.unityweb",
+        codeUrl: buildUrl + "/Downloads.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "TerniumHeatmapFinal",
@@ -86,13 +86,20 @@
         config.devicePixelRatio = 1;
         unityShowBanner("WebGL builds are not supported on mobile devices.");
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "800px";
+        // Si sirve
+        //canvas.style.width = "750px";
+        //canvas.style.height = "600px";
+
+        // Prueba
+        canvas.style.width = "900px";
+        canvas.style.height = "600px";
       }
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
+      // let gameInstance;
+
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
@@ -101,12 +108,16 @@
             loadingBar.style.display = "none";
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
+
+              // gameInstance = unityInstance;
+              unityInstance.SendMessage("MyGameObject", "MyFunction");
             };
           })
           .catch((message) => {
             alert(message);
           });
       };
+
       document.body.appendChild(script);
     </script>
   </body>

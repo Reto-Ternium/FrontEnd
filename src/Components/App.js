@@ -10,10 +10,10 @@ import Unity, { UnityContext } from "react-unity-webgl";
 import "./App.scss";
 
 const unityContext = new UnityContext({
-  loaderUrl: "Build/public.loader.js",
-  dataUrl: "Build/public.data",
-  frameworkUrl: "Build/public.framework.js",
-  codeUrl: "Build/public.wasm",
+  loaderUrl: "Build/Downloads.loader.js",
+  dataUrl: "Build/Downloads.data",
+  frameworkUrl: "Build/Downloads.framework.js",
+  codeUrl: "Build/Downloads.wasm",
 });
 
 export default function TemporaryDrawer() {
